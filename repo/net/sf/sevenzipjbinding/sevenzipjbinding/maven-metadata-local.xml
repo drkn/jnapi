@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>net.sf.sevenzipjbinding</groupId>
+  <artifactId>sevenzipjbinding</artifactId>
+  <versioning>
+    <release>4.65-1.06-rc</release>
+    <versions>
+      <version>4.65-1.06-rc</version>
+    </versions>
+    <lastUpdated>20140126170141</lastUpdated>
+  </versioning>
+</metadata>

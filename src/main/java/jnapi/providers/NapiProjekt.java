@@ -1,13 +1,13 @@
 package jnapi.providers;
 
-import net.sf.sevenzipjbinding.ISevenZipInArchive;
-import net.sf.sevenzipjbinding.SevenZip;
-import net.sf.sevenzipjbinding.SevenZipException;
-import net.sf.sevenzipjbinding.impl.RandomAccessFileInStream;
 import jnapi.sevenzip.SevenZipExtractCallback;
 import jnapi.subtitles.Converter;
 import jnapi.subtitles.Format;
 import jnapi.utils.*;
+import net.sf.sevenzipjbinding.ISevenZipInArchive;
+import net.sf.sevenzipjbinding.SevenZip;
+import net.sf.sevenzipjbinding.SevenZipException;
+import net.sf.sevenzipjbinding.impl.RandomAccessFileInStream;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,12 +35,12 @@ public class NapiProjekt {
         int[] mul = new int[]{2, 2, 5, 4, 3};
         int[] add = new int[]{0, 0xd, 0x10, 0xb, 0x5};
         StringBuffer result = new StringBuffer();
-        for (int i = 0; i < idx.length; i++) {
-            int a = add[i];
-            int m = mul[i];
-            int iidx = idx[i];
-            int t = a + Integer.parseInt(input.substring(iidx, iidx + 1), 16);
-            int v = Integer.parseInt(input.substring(t, t + 2), 16);
+        for (int ii = 0; ii < idx.length; ii++) {
+            int a = add[ii];
+            int m = mul[ii];
+            int i = idx[ii];
+            int t = a + Integer.parseInt(input.substring(i, i + 1), 16);
+            int v = Integer.parseInt(input.substring(t, Math.min(t + 2, input.length())), 16);
             String tmp = String.format("%x", v * m);
             result.append(tmp.substring(tmp.length() - 1));
         }
@@ -122,7 +122,7 @@ public class NapiProjekt {
 
             return true;
         } catch (Exception e) {
-          Log.error("Could not download subtitles: " + e.getMessage());
+            Log.error("Could not download subtitles: " + e.getMessage());
         } finally {
             // Some cleanup
             FileUtils.deleteFile(downloaded);

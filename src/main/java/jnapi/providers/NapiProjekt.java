@@ -71,7 +71,9 @@ public class NapiProjekt {
             downloaded = NetUtils.downloadFile(url);
             if (downloaded.length() == INVALID_CONTENT.length()) {
                 // Check if downloaded file is invalid
-                if (new String(FileUtils.readFile(downloaded, INVALID_CONTENT.length())).equals(INVALID_CONTENT)) {
+                String content = new String(FileUtils.readFile(downloaded, INVALID_CONTENT.length()));
+                if (content.equals(INVALID_CONTENT)) {
+                    Log.info("Could not download subtitles: " + content);
                     return false;
                 }
             }

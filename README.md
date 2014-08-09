@@ -1,7 +1,7 @@
 JNAPI
 =====
 
-Pure Java commandline Subtitles downloader. Currently JNAPI uses napiprojekt.pl to download subtitles in Polish. JNAPI will try to guess subtiles format and convert it automatically to MPL2, SRT and MicroDVD formats for each video file.
+Pure Java commandline subtitles downloader. Currently JNAPI uses napiprojekt.pl to download subtitles in Polish. JNAPI will try to guess subtiles format and convert it automatically to MPL2, SRT and MicroDVD formats for each video file.
 
 Requirements
 ----
